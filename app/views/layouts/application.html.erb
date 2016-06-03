@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<div>
+  <p><%= flash[:notice] %></p>
+</div>
+
 <% if current_user %>
   <p>Hi, <%= current_user.username %></p><br>
   <%= link_to "Logout", logout_path, method: :delete %>

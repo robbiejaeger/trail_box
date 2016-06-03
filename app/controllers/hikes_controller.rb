@@ -19,8 +19,10 @@ class HikesController < ApplicationController
     @location = Location.find(params[:location_id])
     @hike = @location.hikes.new(hike_params)
     if @hike.save
+      flash[:notice] = "Your hike was added!"
       redirect_to location_hike_path(@location, @hike)
     else
+      flash.now[:notice] = @hike.errors.full_messages.join(", ")
       render :new
     end
   end

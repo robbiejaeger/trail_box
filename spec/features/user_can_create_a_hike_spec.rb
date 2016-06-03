@@ -16,6 +16,7 @@ RSpec.feature "User can create a a new hike" do
     fill_in "hike[description]", with: "This hike was great."
     click_on "Create Hike"
 
+    expect(page).to have_content "Your hike was added"
     expect(page).to have_content "Mt. Evans"
     expect(page).to have_content "This hike was great."
   end
