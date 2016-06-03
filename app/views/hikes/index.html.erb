@@ -5,3 +5,5 @@
     <li><%= link_to "#{hike.date_hiked} - #{hike.route}", location_hike_path(@location, hike) %></li>
   <% end %>
 </ul>
+
+<%= link_to "Add Your #{@location.name} Hike", new_location_hike_path(@location) %>

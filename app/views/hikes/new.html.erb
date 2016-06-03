@@ -1,0 +1,25 @@
+<h1>Create your <%= @location.name %> Hike</h1>
+
+<%= form_for [@location, @hike] do |f| %>
+  <%= f.label :date_hiked %>
+  <%= f.date_field :date_hiked %><br>
+
+  <%= f.label :route %>
+  <%= f.text_field :route %><br>
+
+  <%= f.label :distance %>
+  <%= f.text_field :distance %><br>
+
+  <%= f.label :elevation_gain %>
+  <%= f.text_field :elevation_gain %><br>
+
+  <%= f.label :highest_point %>
+  <%= f.text_field :highest_point %><br>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %><br>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to All #{@location.name} Hikes", location_hikes_path(@location) %>
