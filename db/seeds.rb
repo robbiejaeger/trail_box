@@ -8,3 +8,6 @@
 
 location1 = Location.create(name: "Mt. Evans")
 location2 = Location.create(name: "Torreys Peak")
+
+date = Date.today
+location1.hikes.create(date_hiked: date, route: "Main Trail", highest_point: "14,000 ft", description: "We hiked this!")

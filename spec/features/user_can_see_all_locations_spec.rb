@@ -11,11 +11,11 @@ RSpec.feature "User can see all locations" do
     expect(page).to have_content "Torreys Peak"
   end
 
-  scenario "each location has a link to its show page" do
+  scenario "each location has a link to hikes page" do
     location1 = Location.create(name: "Mt. Evans")
 
     visit locations_path
 
-    expect(page).to have_link("Mt. Evans", :href => location_path(location1))
+    expect(page).to have_link("Mt. Evans", :href => location_hikes_path(location1))
   end
 end

@@ -1,0 +1,7 @@
+<h1><%= @location.name %></h1>
+
+<ul>
+  <% @hikes.each do |hike| %>
+    <li><%= link_to "#{hike.date_hiked} - #{hike.route}", location_hike_path(@location, hike) %></li>
+  <% end %>
+</ul>
