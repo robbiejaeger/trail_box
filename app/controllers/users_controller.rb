@@ -8,10 +8,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Hi, #{@user.username}. Your account was created!"
+      flash[:notice] = "Hi, #{@user.username}. Your account was created!"
       redirect_to root_path
     else
-      flash.now[:error] = @user.errors.full_messages.join(", ")
+      flash.now[:notice] = @user.errors.full_messages.join(", ")
       render :new
     end
   end

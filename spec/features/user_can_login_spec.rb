@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Existing user can login" do
-  scenario "they login an see root path" do
+  scenario "they login and see root path" do
     location = Location.create(name: "Mt. Evans")
     user = User.create(username: "Robbie", password: "password")
 

@@ -14,5 +14,6 @@ RSpec.feature "User can create account" do
     expect(page).to_not have_content "Login"
     expect(page).to have_content "Logout"
     expect(page).to have_content "Hi, Robbie"
+    expect(page).to have_content "Hi, Robbie. Your account was created!"
   end
 end
