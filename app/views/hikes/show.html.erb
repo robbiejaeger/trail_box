@@ -1,4 +1,26 @@
 <h1><%= @location.name %></h1>
-<h3><%= @hike.date_hiked %> - <%= @hike.route %></h3>
+
+<h3>Date Hiked: <%= @hike.date_hiked %></h3>
+
+<table class="table">
+  <tr>
+    <td>Route</td>
+    <td><%= @hike.route %></td>
+  </tr>
+  <tr>
+    <td>Distance</td>
+    <td><%= @hike.distance %></td>
+  </tr>
+  <tr>
+    <td>Elevation Gain</td>
+    <td><%= @hike.elevation_gain %></td>
+  </tr>
+  <tr>
+    <td>Highest Point</td>
+    <td><%= @hike.highest_point %></td>
+  </tr>
+</table>
 
 <p><%= @hike.description %></p>
+
+<%= link_to "Back To All #{@location.name} Hikes", location_hikes_path(@location) %>

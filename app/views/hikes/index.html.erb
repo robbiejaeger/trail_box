@@ -1,9 +1,12 @@
 <h1><%= @location.name %></h1>
 
-<ul>
+<ul class="list-group">
   <% @hikes.each do |hike| %>
-    <li><%= link_to "#{hike.date_hiked} - #{hike.route}", location_hike_path(@location, hike) %></li>
+    <li class="list-group-item">
+      <%= link_to "#{hike.date_hiked} - #{hike.route}", location_hike_path(@location, hike) %>
+    </li>
   <% end %>
 </ul>
 
-<%= link_to "Add Your #{@location.name} Hike", new_location_hike_path(@location) %>
+
+<%= link_to "Add Your #{@location.name} Hike", new_location_hike_path(@location), class: "btn btn-primary" %>
