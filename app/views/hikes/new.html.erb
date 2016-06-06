@@ -26,7 +26,17 @@
     <%= f.text_area :description, class: "form-control", rows: "15" %>
   </div>
 
-  <%= f.submit %>
+  <div class="checkbox">
+    <%= f.label "Hike Categories" %><br />
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |c| %>
+      <div class="checkbox">
+        <%= c.check_box %>
+        <%= c.label %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= f.submit "Create Hike", class: "btn btn-default" %>
 <% end %>
 
 <%= link_to "Back to All #{@location.name} Hikes", location_hikes_path(@location) %>
