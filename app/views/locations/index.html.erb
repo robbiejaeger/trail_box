@@ -1,7 +1,10 @@
-<h1>Locations</h1>
+<h1 class="text-center">Locations</h1>
 
-<ul>
+<ul class="list-group">
   <% @locations.each do |location| %>
-    <li><%= link_to location.name, location_hikes_path(location) %></li>
+    <li class="list-group-item">
+      <span class="badge"><%= location.hikes.count %> Hikes</span>
+      <%= link_to location.name, location_hikes_path(location) %>
+    </li>
   <% end %>
 </ul>

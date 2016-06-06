@@ -1,0 +1,9 @@
+<h1>Category: <%= @category.name %></h1>
+
+<h3>Hikes with this category</h3>
+
+<ul class="list-group">
+  <% @category.hikes.each do |hike| %>
+    <li class="list-group-item"><%= link_to "#{hike.route} - #{hike.date_hiked}", location_hike_path(hike.location, hike) %></li>
+  <% end %>
+</ul>

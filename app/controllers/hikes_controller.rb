@@ -36,7 +36,8 @@ class HikesController < ApplicationController
       :distance,
       :elevation_gain,
       :highest_point,
-      :description
+      :description,
+      category_ids:[]
     )
   end
 end
